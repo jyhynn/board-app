@@ -42,11 +42,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 cp --region us-east-1 ./board-front.zip s3://board-app-bucket/deploy/board-front.zip
+          aws s3 cp --region us-east-1 ./board-front.zip s3://board-app-bucket-1/deploy/board-front.zip
 
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment 
           --application-name board-app 
           --deployment-config-name CodeDeployDefault.AllAtOnce 
           --deployment-group-name dev 
-          --s3-location bucket=board-app-bucket,key=deploy/board-front.zip,bundleType=zip 
+          --s3-location bucket=board-app-bucket-1,key=deploy/board-front.zip,bundleType=zip 
