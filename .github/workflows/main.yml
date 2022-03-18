@@ -45,7 +45,7 @@ jobs:
           aws s3 cp --region ap-northeast-2 ./board-front.zip s3://board-app-bucket/deploy/board-front.zip
 
       - name: Deploy # Deploy to EC2
-        run: aws deploy create-deployment
+        run: aws deploy create-deployment 
           --application-name board-app 
           --deployment-config-name CodeDeployDefault.AllAtOnce 
           --deployment-group-name dev 
