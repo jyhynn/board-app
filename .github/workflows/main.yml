@@ -46,7 +46,7 @@ jobs:
 
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment
-          --board-app
-          --deployment-config-name CodeDeployDefault.AllAtOnce
-          --dev
-          --s3-location bucket=board-app-bucket,key=deploy/board-front.zip,bundleType=zip
+          --application-name board-app 
+          --deployment-config-name CodeDeployDefault.AllAtOnce 
+          --deployment-group-name dev 
+          --s3-location bucket=board-app-bucket,key=deploy/board-front.zip,bundleType=zip 
