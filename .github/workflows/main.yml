@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
 
-name: Deploy String boot to Amazon EC2
+name: Deploy String boot to Amazon EC2 
 env:
   PROJECT_NAME: board-app
 
