@@ -21,7 +21,6 @@ class ListBoardComponent extends Component {
     render() {
         return (
             <div>
-                ssss
                 <h2 className="text-center">Boards List</h2>
                 <div className ="row">
                     <table className="table table-striped table-bordered">
