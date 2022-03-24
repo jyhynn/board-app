@@ -6,7 +6,9 @@ class ListBoardComponent extends Component {
         super(props)
     // # 1. 
         this.state = { 
-            boards: []
+            boards: [],
+            testString: 'abc',
+            testList: []
         }
 		
     }
@@ -15,12 +17,21 @@ class ListBoardComponent extends Component {
         BoardService.getBoards().then((res) => {
             this.setState({ boards: res.data});
         });
+        BoardService.testMethod().then((res) => {
+            this.setState({ testString: res.data});
+        });
+        BoardService.testMethod2().then((res) => {
+            this.setState({ testList: res.data});
+        });
     }
 
     // # 3.
     render() {
         return (
             <div>
+
+                테스트 스트링? : {this.state.testString}
+
                 <h2 className="text-center">Boards List</h2>
                 <div className ="row">
                     <table className="table table-striped table-bordered">
